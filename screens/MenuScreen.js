@@ -72,7 +72,20 @@ const MenuScreen = ({ navigation }) => {
     navigation.navigate('RecipeDetail');
   };
 
-  const colors = ['#FF6B9D', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8'];
+  const colors = [
+    '#FF6B9D', // Rosa vibrante
+    '#4ECDC4', // Turquesa
+    '#45B7D1', // Azul cielo
+    '#96CEB4', // Verde menta
+    '#FFEAA7', // Amarillo suave
+    '#DDA0DD', // Lavanda
+    '#98D8C8', // Verde agua
+    '#FFB347', // Naranja melocotón
+    '#87CEEB', // Azul cielo claro
+    '#F0A3FF', // Rosa magenta
+    '#B19CD9', // Púrpura suave
+    '#FFD93D'  // Amarillo dorado
+  ];
   
   const AnimatedRecipeCard = ({ item, index }) => {
     const cardOpacity = useRef(new Animated.Value(0)).current;
@@ -174,6 +187,7 @@ const MenuScreen = ({ navigation }) => {
       >
         <Text style={styles.headerTitle}>Explora Recetas</Text>
         <Text style={styles.headerSubtitle}>Toca cualquier receta para una sorpresa culinaria</Text>
+        <Text style={styles.authorName}>Creado por Erick Ortiz</Text>
       </Animated.View>
       
       <FlatList
@@ -194,7 +208,7 @@ const MenuScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8F9FA',
+    backgroundColor: '#F5F7FF', // Fondo azul muy suave
   },
   loadingContainer: {
     flex: 1,
@@ -215,24 +229,34 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 25,
     borderBottomRightRadius: 25,
     marginBottom: 10,
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+    elevation: 4,
+    shadowColor: '#6C63FF',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(108, 99, 255, 0.1)',
   },
   headerTitle: {
     fontSize: 28,
     fontWeight: '700',
-    color: '#2D3436',
+    color: '#1A1D29', // Azul muy oscuro
     textAlign: 'center',
     marginBottom: 8,
   },
   headerSubtitle: {
     fontSize: 16,
-    color: '#636E72',
+    color: '#4A5568', // Gris azulado
     textAlign: 'center',
     fontWeight: '400',
+  },
+  authorName: {
+    fontSize: 14,
+    color: '#7C3AED', // Púrpura más vibrante
+    textAlign: 'center',
+    fontWeight: '600',
+    marginTop: 8,
+    fontStyle: 'italic',
   },
   listContainer: {
     padding: 15,
@@ -243,12 +267,14 @@ const styles = StyleSheet.create({
     margin: 8,
     borderRadius: 20,
     overflow: 'hidden',
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 3,
+    elevation: 5,
+    shadowColor: '#6C63FF',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
     minHeight: 200,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.3)',
   },
   cardTouchable: {
     flex: 1,
@@ -276,30 +302,37 @@ const styles = StyleSheet.create({
   },
   recipeCategory: {
     fontSize: 11,
-    color: 'rgba(255, 255, 255, 0.9)',
-    fontWeight: '500',
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    color: 'rgba(255, 255, 255, 0.95)',
+    fontWeight: '600',
+    backgroundColor: 'rgba(255, 255, 255, 0.25)',
     paddingHorizontal: 8,
     paddingVertical: 3,
-    borderRadius: 10,
+    borderRadius: 12,
     overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.3)',
   },
   recipeArea: {
     fontSize: 11,
-    color: 'rgba(255, 255, 255, 0.9)',
-    fontWeight: '500',
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    color: 'rgba(255, 255, 255, 0.95)',
+    fontWeight: '600',
+    backgroundColor: 'rgba(255, 255, 255, 0.25)',
     paddingHorizontal: 8,
     paddingVertical: 3,
-    borderRadius: 10,
+    borderRadius: 12,
     overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.3)',
   },
   tapHint: {
     fontSize: 11,
-    color: 'rgba(255, 255, 255, 0.8)',
-    fontWeight: '500',
+    color: 'rgba(255, 255, 255, 0.9)',
+    fontWeight: '600',
     textAlign: 'center',
     fontStyle: 'italic',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 2,
   },
 });
 
